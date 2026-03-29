@@ -1,0 +1,14 @@
+[Unit]
+Description=Photo cloud backup via rclone
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+# Adjust this path before installing the service.
+WorkingDirectory=/opt/photo-cloud-backup
+ExecStart=/usr/bin/env bash /opt/photo-cloud-backup/scripts/sync-onedrive-media.sh
+
+[Install]
+WantedBy=multi-user.target

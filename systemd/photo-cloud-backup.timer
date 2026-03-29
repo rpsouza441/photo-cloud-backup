@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly photo cloud backup timer
+
+[Timer]
+OnCalendar=Sun 06:30
+Persistent=true
+RandomizedDelaySec=10m
+Unit=photo-cloud-backup.service
+
+[Install]
+WantedBy=timers.target
